@@ -1,0 +1,40 @@
+*{
+    box-sizing: border-box;
+}
+a{
+    text-decoration: none;
+}
+body{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    margin: 0;
+    background: linear-gradient(180deg, #F6FAFD 0%, #FFFFFF 19.4%);
+}
+.container{
+    height: 100%;
+    width: 100%;
+    max-width: 1190px;
+    padding: 5px;
+}
+.flexContainer{
+    display: flex;
+    flex-wrap: wrap;
+}
+header{   
+    justify-content: center;
+    width: 100%;
+    padding: 1rem 0;
+    background: aqua;
+}
+.navWrapper {
+    display: flex;
+    width: 50%; 
+    margin: auto;
+}
+.nav_link{
+    list-style: none;
+    margin: 0 3rem 0 0;   
+    color: #4B5D68;
+    font-size: large;
+}
