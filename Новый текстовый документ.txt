@@ -698,3 +698,6 @@ from inserted
 select * from History
 select * from KazakhBest
 
+
+12312312
+
