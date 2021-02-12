@@ -1,0 +1,700 @@
+cd C:\Program Files\Google\Chrome\Application
+chrome.exe --user-data-dir="C:/Chrome dev session" --disable-web-security
+create database Nurik_192;
+USE Nurik_192;--drop table KazakhBest
+create table KazakhBest(
+	id_product int primary key identity(1,1),
+	name nvarchar(50)
+)
+select * from History
+select * from KazakhBest
+
+insert into KazakhBest values('Samsung Galaxy S20 Plus' ); --, 447900
+insert into KazakhBest values('Skyworth BD-400' ); --, 169990
+insert into KazakhBest values('Nokia 230 DS' ); --, 28400
+insert into KazakhBest values('Apple iPad Pro A2229' ); --, 894900
+insert into KazakhBest values('Apple Watch Series 6'); --, 249900
+insert into KazakhBest values('SHARP SJXE55PMBE'); --, 499990
+insert into KazakhBest values('DELL XPS 15'); --, 1790900
+insert into KazakhBest values('Lenovo Yoga Slim 9'); --, 969900
+insert into KazakhBest values('Gefest ЭПНД 6140-02 0001'); --, 167990
+insert into KazakhBest values('HP EliteDesk 800 G5 TWR'); --, 399900
+
+insert into KazakhBest values('Xiaomi Redmi Note 9' ); --, 89990 Смартфон
+insert into KazakhBest values('Apple iPad Pro A2232' ); --, 877800 Планшет 
+insert into KazakhBest values('Apple iPhone 11' ); --, 387900 Смартфон
+insert into KazakhBest values('Apple Watch SE' ); --, 176900 Смарт-часы
+insert into KazakhBest values('HP 15-dw1002ur'); --, 189990 Ноутбук
+insert into KazakhBest values('Samsung Galaxy A12'); --, 68590 Смартфон
+insert into KazakhBest values('HP All-in-One 24-df0033ur'); --, 204100 Моноблок
+insert into KazakhBest values('HP ProDesk 600 G5 MT'); --, 385300 Компьютер
+insert into KazakhBest values('Acer Nitro N50-610'); --, 451100 Компьютер
+insert into KazakhBest values('Kaspersky 2021'); --, 9890 Антивирус
+
+insert into KazakhBest values('ESET NOD32' ); --, 5990 Антивирус
+insert into KazakhBest values('Samsung MG23K3575AK/BW' ); --, 60800 Микроволновка
+insert into KazakhBest values('Bosch HGA22B120Q' ); --, 153700 плита
+insert into KazakhBest values('Ardesto DNF-M295W188' ); --, 149900 Холодильник
+insert into KazakhBest values('SHARP SJXE55PMBE'); --, 499990 Холодильник
+insert into KazakhBest values('Бирюса 155КХ'); --, 83200 Морозильник
+
+
+create table Kazakhstan(
+	id_product int primary key identity(1,1),
+	KazakhBest_id integer not null, 
+	foreign key (KazakhBest_id) references KazakhBest(id_product),
+	salary bigint
+)
+insert into Kazakhstan values(1, 447900);
+insert into Kazakhstan values(2, 169990);
+insert into Kazakhstan values(3, 28400);
+insert into Kazakhstan values(4, 894900);
+insert into Kazakhstan values(5, 249900);
+select KazakhBest.name, Kazakhstan.salary
+from Kazakhstan
+join KazakhBest on KazakhBest.id_product = Kazakhstan.KazakhBest_id
+
+create table China(
+	id_product int primary key identity(1,1),
+	KazakhBest_id integer not null, 
+	foreign key (KazakhBest_id) references KazakhBest(id_product),
+	salary bigint
+)
+insert into China values(6, 499990);
+insert into China values(7, 1790900);
+insert into China values(8, 969900);
+insert into China values(9, 167990);
+insert into China values(10, 399900);
+select KazakhBest.name, China.salary
+from China
+join KazakhBest on KazakhBest.id_product = China.KazakhBest_id
+
+create table Phillipins(
+	id_product int primary key identity(1,1),
+	KazakhBest_id integer not null, 
+	foreign key (KazakhBest_id) references KazakhBest(id_product),
+	salary bigint
+)
+insert into Phillipins values(11, 89990);
+insert into Phillipins values(12, 877800);
+insert into Phillipins values(13, 387900);
+insert into Phillipins values(14, 176900);
+insert into Phillipins values(15, 189990);
+select KazakhBest.name, Phillipins.salary
+from Phillipins
+join KazakhBest on KazakhBest.id_product = Phillipins.KazakhBest_id
+
+create table Russion(
+	id_product int primary key identity(1,1),
+	KazakhBest_id integer not null, 
+	foreign key (KazakhBest_id) references KazakhBest(id_product),
+	salary bigint
+)
+insert into Russion values(20, 9890);
+insert into Russion values(21, 5990);
+insert into Russion values(22, 60800);
+insert into Russion values(23, 153700);
+insert into Russion values(24, 149900);
+select KazakhBest.name, Russion.salary
+from Russion
+join KazakhBest on KazakhBest.id_product = Russion.KazakhBest_id
+
+create table Azerbaydzhan(
+	id_product int primary key identity(1,1),
+	KazakhBest_id integer not null, 
+	foreign key (KazakhBest_id) references KazakhBest(id_product),
+	salary bigint
+)
+insert into Azerbaydzhan values(25, 499990);
+insert into Azerbaydzhan values(26, 83200);
+insert into Azerbaydzhan values(1, 445900);
+insert into Azerbaydzhan values(2, 139990);
+insert into Azerbaydzhan values(3, 28000);
+select KazakhBest.name, Azerbaydzhan.salary
+from Azerbaydzhan
+join KazakhBest on KazakhBest.id_product = Azerbaydzhan.KazakhBest_id
+
+create table Turkia(
+	id_product int primary key identity(1,1),
+	KazakhBest_id integer not null, 
+	foreign key (KazakhBest_id) references KazakhBest(id_product),
+	salary bigint
+)
+insert into Turkia values(16, 68590);
+insert into Turkia values(17, 204100);
+insert into Turkia values(18, 385300);
+insert into Turkia values(19, 451100);
+insert into Turkia values(20, 9890);
+select KazakhBest.name, Turkia.salary
+from Turkia
+join KazakhBest on KazakhBest.id_product = Turkia.KazakhBest_id
+
+create table Singapur(
+	id_product int primary key identity(1,1),
+	KazakhBest_id integer not null, 
+	foreign key (KazakhBest_id) references KazakhBest(id_product),
+	salary bigint
+)
+insert into Singapur values(6, 1700000);
+insert into Singapur values(7, 960900);
+insert into Singapur values(1, 457900);
+insert into Singapur values(4, 896900);
+insert into Singapur values(2, 179990);
+select KazakhBest.name, Singapur.salary
+from Singapur
+join KazakhBest on KazakhBest.id_product = Singapur.KazakhBest_id
+
+create table Malaziya(
+	id_product int primary key identity(1,1),
+	KazakhBest_id integer not null, 
+	foreign key (KazakhBest_id) references KazakhBest(id_product),
+	salary bigint
+)
+insert into Malaziya values(6, 409990);
+insert into Malaziya values(7, 1800000);
+insert into Malaziya values(18, 380300);
+insert into Malaziya values(19, 455100);
+insert into Malaziya values(10, 309900);
+select KazakhBest.name, Malaziya.salary
+from Malaziya
+join KazakhBest on KazakhBest.id_product = Malaziya.KazakhBest_id
+
+create table Saudovskoy_Aravii(
+	id_product int primary key identity(1,1),
+	KazakhBest_id integer not null, 
+	foreign key (KazakhBest_id) references KazakhBest(id_product),
+	salary bigint
+)
+insert into Saudovskoy_Aravii values(10, 299900);
+insert into Saudovskoy_Aravii values(12, 878000);
+insert into Saudovskoy_Aravii values(13, 387000);
+insert into Saudovskoy_Aravii values(14, 170900);
+insert into Saudovskoy_Aravii values(15, 189990);
+select KazakhBest.name, Saudovskoy_Aravii.salary
+from Saudovskoy_Aravii
+join KazakhBest on KazakhBest.id_product = Saudovskoy_Aravii.KazakhBest_id
+
+create table Tailand(
+	id_product int primary key identity(1,1),
+	KazakhBest_id integer not null, 
+	foreign key (KazakhBest_id) references KazakhBest(id_product),
+	salary bigint
+)
+insert into Tailand values(21, 5990);
+insert into Tailand values(22, 60800);
+insert into Tailand values(3, 28400);
+insert into Tailand values(4, 890900);
+insert into Tailand values(25, 399990);
+select KazakhBest.name, Tailand.salary
+from Tailand
+join KazakhBest on KazakhBest.id_product = Tailand.KazakhBest_id
+
+create table Samsung_Galaxy_S20_Plus(	
+	id_product int primary key identity(1,1),
+	cod_product int,
+	KazakhBest_id integer not null, 
+	foreign key (KazakhBest_id) references KazakhBest(id_product),
+	bought bit default '1'
+)
+declare @cod_random_id1 int, @cod_count_id1 int
+set @cod_count_id1 = 50;
+set @cod_random_id1 = 12304;
+while @cod_count_id1 > 0
+	begin 
+		insert into Samsung_Galaxy_S20_Plus(cod_product,KazakhBest_id) values(@cod_random_id1, 1)
+		set @cod_count_id1 = @cod_count_id1 - 1
+		set @cod_random_id1 = FLOOR(RAND()*(1000000-5)+5);
+	end;
+select Samsung_Galaxy_S20_Plus.id_product, Samsung_Galaxy_S20_Plus.cod_product, KazakhBest.name, Samsung_Galaxy_S20_Plus.bought
+from Samsung_Galaxy_S20_Plus
+join KazakhBest on KazakhBest.id_product = Samsung_Galaxy_S20_Plus.KazakhBest_id
+
+
+SELECT COUNT (bought) as lef_t
+FROM Samsung_Galaxy_S20_Plus
+where bought = '1';
+
+DELETE FROM Samsung_Galaxy_S20_Plus
+WHERE id_product = 4 ; 
+
+create trigger KazakhBest_Samsung_Galaxy_S20_Plus
+on Samsung_Galaxy_S20_Plus
+instead of delete
+as
+update Samsung_Galaxy_S20_Plus
+set bought = 0
+where id_product = (select id_product from deleted)
+
+create table Skyworth_BD_400(	
+	id_product int primary key identity(1,1),
+	cod_product int,
+	KazakhBest_id integer not null, 
+	foreign key (KazakhBest_id) references KazakhBest(id_product),
+	bought bit default '1'
+)
+declare @cod_random_id2 int, @cod_count_id2 int
+set @cod_count_id2 = 20;
+set @cod_random_id2 = 13134;
+while @cod_count_id2 > 0
+	begin 
+		insert into Skyworth_BD_400(cod_product,KazakhBest_id) values(@cod_random_id2, 2)
+		set @cod_count_id2 = @cod_count_id2 - 1
+		set @cod_random_id2 = FLOOR(RAND()*(1000000-5)+5);
+	end;
+select Skyworth_BD_400.id_product, Skyworth_BD_400.cod_product, KazakhBest.name, Skyworth_BD_400.bought
+from Skyworth_BD_400
+join KazakhBest on KazakhBest.id_product = Skyworth_BD_400.KazakhBest_id
+
+SELECT COUNT (bought) as lef_t
+FROM Skyworth_BD_400
+where bought = '1';
+
+DELETE FROM Skyworth_BD_400
+WHERE id_product = 4 ; 
+
+create trigger KazakhBest_Skyworth_BD_400
+on Skyworth_BD_400
+instead of delete
+as
+update Skyworth_BD_400
+set bought = 0
+where id_product = (select id_product from deleted)
+
+create table Nokia_230_DS(	
+	id_product int primary key identity(1,1),
+	cod_product int,
+	KazakhBest_id integer not null, 
+	foreign key (KazakhBest_id) references KazakhBest(id_product),
+	bought bit default '1'
+)
+declare @cod_random_id3 int, @cod_count_id3 int
+set @cod_count_id3 = 30;
+set @cod_random_id3 = 13233;
+while @cod_count_id3 > 0
+	begin 
+		insert into Nokia_230_DS(cod_product,KazakhBest_id) values(@cod_random_id3, 3)
+		set @cod_count_id3 = @cod_count_id3 - 1
+		set @cod_random_id3 = FLOOR(RAND()*(1000000-5)+5);
+	end;
+select Nokia_230_DS.id_product, Nokia_230_DS.cod_product, KazakhBest.name, Nokia_230_DS.bought
+from Nokia_230_DS
+join KazakhBest on KazakhBest.id_product = Nokia_230_DS.KazakhBest_id
+
+SELECT COUNT (bought) as lef_t
+FROM Nokia_230_DS
+where bought = '1';
+
+DELETE FROM Nokia_230_DS
+WHERE id_product = 1 ; 
+
+create trigger KazakhBest_Nokia_230_DS
+on Nokia_230_DS
+instead of delete
+as
+update Nokia_230_DS
+set bought = 0
+where id_product = (select id_product from deleted)
+
+
+create table Apple_iPad_Pro_A2229(	
+	id_product int primary key identity(1,1),
+	cod_product int,
+	KazakhBest_id integer not null, 
+	foreign key (KazakhBest_id) references KazakhBest(id_product),
+	bought bit default '1'
+)
+declare @cod_random_id4 int, @cod_count_id4 int
+set @cod_count_id4 = 50;
+set @cod_random_id4 = 123004;
+while @cod_count_id4 > 0
+	begin 
+		insert into Apple_iPad_Pro_A2229(cod_product,KazakhBest_id) values(@cod_random_id4, 4)
+		set @cod_count_id4 = @cod_count_id4 - 1
+		set @cod_random_id4 = FLOOR(RAND()*(1000000-5)+5);
+	end;
+select Apple_iPad_Pro_A2229.id_product, Apple_iPad_Pro_A2229.cod_product, KazakhBest.name, Apple_iPad_Pro_A2229.bought
+from Apple_iPad_Pro_A2229
+join KazakhBest on KazakhBest.id_product = Apple_iPad_Pro_A2229.KazakhBest_id
+
+SELECT COUNT (bought) as lef_t
+FROM Apple_iPad_Pro_A2229
+where bought = '1';
+
+DELETE FROM Apple_iPad_Pro_A2229
+WHERE id_product = 1 ; 
+
+create trigger KazakhBest_Apple_iPad_Pro_A2229
+on Apple_iPad_Pro_A2229
+instead of delete
+as
+update Apple_iPad_Pro_A2229
+set bought = 0
+where id_product = (select id_product from deleted)
+
+
+create table Apple_Watch_Series_6(	
+	id_product int primary key identity(1,1),
+	cod_product int,
+	KazakhBest_id integer not null, 
+	foreign key (KazakhBest_id) references KazakhBest(id_product),
+	bought bit default '1'
+)
+declare @cod_random_id5 int, @cod_count_id5 int
+set @cod_count_id5 = 50;
+set @cod_random_id5 = 123224;
+while @cod_count_id5 > 0
+	begin 
+		insert into Apple_Watch_Series_6(cod_product,KazakhBest_id) values(@cod_random_id5, 5)
+		set @cod_count_id5 = @cod_count_id5 - 1
+		set @cod_random_id5 = FLOOR(RAND()*(1000000-5)+5);
+	end;
+select Apple_Watch_Series_6.id_product, Apple_Watch_Series_6.cod_product, KazakhBest.name, Apple_Watch_Series_6.bought
+from Apple_Watch_Series_6
+join KazakhBest on KazakhBest.id_product = Apple_Watch_Series_6.KazakhBest_id
+
+SELECT COUNT (bought) as lef_t
+FROM Apple_Watch_Series_6
+where bought = '1';
+
+DELETE FROM Apple_Watch_Series_6
+WHERE id_product = 1 ; 
+
+create trigger KazakhBest_Apple_Watch_Series_6
+on Apple_Watch_Series_6
+instead of delete
+as
+update Apple_Watch_Series_6
+set bought = 0
+where id_product = (select id_product from deleted)
+
+
+create table Kazakhstan_what_city(
+	id_product int primary key identity(1,1),
+	KazakhBest_id integer not null, 
+	foreign key (KazakhBest_id) references KazakhBest(id_product),
+	what_city_id integer not null, 
+	foreign key (what_city_id) references what_city(id),
+	Kazakhstan_id integer not null, 
+	foreign key (Kazakhstan_id) references Kazakhstan(id_product)
+) 
+create table China_what_city(
+	id_product int primary key identity(1,1),
+	KazakhBest_id integer not null, 
+	foreign key (KazakhBest_id) references KazakhBest(id_product),
+	what_city_id integer not null, 
+	foreign key (what_city_id) references what_city(id),
+	China_id integer not null, 
+	foreign key (China_id) references China(id_product)
+) 
+create table Phillipins_what_city(
+	id_product int primary key identity(1,1),
+	KazakhBest_id integer not null, 
+	foreign key (KazakhBest_id) references KazakhBest(id_product),
+	what_city_id integer not null, 
+	foreign key (what_city_id) references what_city(id),
+	Phillipins_id integer not null, 
+	foreign key (Phillipins_id) references Phillipins(id_product)
+) 
+create table Russion_what_city(
+	id_product int primary key identity(1,1),
+	KazakhBest_id integer not null, 
+	foreign key (KazakhBest_id) references KazakhBest(id_product),
+	what_city_id integer not null, 
+	foreign key (what_city_id) references what_city(id),
+	Russion_id integer not null, 
+	foreign key (Russion_id) references Russion(id_product)
+) 
+create table Azerbaydzhan_what_city(
+	id_product int primary key identity(1,1),
+	KazakhBest_id integer not null, 
+	foreign key (KazakhBest_id) references KazakhBest(id_product),
+	what_city_id integer not null, 
+	foreign key (what_city_id) references what_city(id),
+	Azerbaydzhan_id integer not null, 
+	foreign key (Azerbaydzhan_id) references Azerbaydzhan(id_product)
+) 
+create table Turkia_what_city(
+	id_product int primary key identity(1,1),
+	KazakhBest_id integer not null, 
+	foreign key (KazakhBest_id) references KazakhBest(id_product),
+	what_city_id integer not null, 
+	foreign key (what_city_id) references what_city(id),
+	Turkia_id integer not null, 
+	foreign key (Turkia_id) references Turkia(id_product)
+) 
+create table Singapur_what_city(
+	id_product int primary key identity(1,1),
+	KazakhBest_id integer not null, 
+	foreign key (KazakhBest_id) references KazakhBest(id_product),
+	what_city_id integer not null, 
+	foreign key (what_city_id) references what_city(id),
+	Singapur_id integer not null, 
+	foreign key (Singapur_id) references Singapur(id_product)
+) 
+create table Malaziya_what_city(
+	id_product int primary key identity(1,1),
+	KazakhBest_id integer not null, 
+	foreign key (KazakhBest_id) references KazakhBest(id_product),
+	what_city_id integer not null, 
+	foreign key (what_city_id) references what_city(id),
+	Malaziya_id integer not null, 
+	foreign key (Malaziya_id) references Malaziya(id_product)
+)
+create table Saudovskoy_Aravii_what_city(
+	id_product int primary key identity(1,1),
+	KazakhBest_id integer not null, 
+	foreign key (KazakhBest_id) references KazakhBest(id_product),
+	what_city_id integer not null, 
+	foreign key (what_city_id) references what_city(id),
+	Saudovskoy_Aravii_id integer not null, 
+	foreign key (Saudovskoy_Aravii_id) references Saudovskoy_Aravii(id_product)
+) 
+create table Tailand_what_city(
+	id_product int primary key identity(1,1),
+	KazakhBest_id integer not null, 
+	foreign key (KazakhBest_id) references KazakhBest(id_product),
+	what_city_id integer not null, 
+	foreign key (what_city_id) references what_city(id),
+	Tailand_id integer not null, 
+	foreign key (Malaziya_id) references Tailand(id_product)
+)
+insert into KazakhBest_what_city values(1,1,1);
+insert into KazakhBest_what_city values(2,1,2);
+insert into KazakhBest_what_city values(3,1,3);
+insert into KazakhBest_what_city values(4,1,4);
+insert into KazakhBest_what_city values(5,1,5);
+insert into China_what_city values(6,3,1);
+insert into China_what_city values(7,3,2);
+insert into China_what_city values(8,3,3);
+insert into China_what_city values(9,3,4);
+insert into China_what_city values(10,3,5);
+insert into Phillipins_what_city values(11,5,1);
+insert into Phillipins_what_city values(12,5,2);
+insert into Phillipins_what_city values(13,5,3);
+insert into Phillipins_what_city values(14,5,4);
+insert into Phillipins_what_city values(15,5,5);
+insert into Russion_what_city values(20,2,1);
+insert into Russion_what_city values(21,2,2);
+insert into Russion_what_city values(22,2,3);
+insert into Russion_what_city values(23,2,4);
+insert into Russion_what_city values(24,2,5);
+insert into Azerbaydzhan_what_city values(25,4,1);
+insert into Azerbaydzhan_what_city values(26,4,2);
+insert into Azerbaydzhan_what_city values(1,4,3);
+insert into Azerbaydzhan_what_city values(2,4,4);
+insert into Azerbaydzhan_what_city values(3,4,5);
+insert into Turkia_what_city values(16,6,1);
+insert into Turkia_what_city values(17,6,2);
+insert into Turkia_what_city values(18,6,3);
+insert into Turkia_what_city values(19,6,4);
+insert into Turkia_what_city values(20,6,5);
+insert into Singapur_what_city values(6,7,1);
+insert into Singapur_what_city values(7,7,2);
+insert into Singapur_what_city values(1,7,3);
+insert into Singapur_what_city values(4,7,4);
+insert into Singapur_what_city values(2,7,5);
+insert into Saudovskoy_Aravii_what_city values(10,9,1);
+insert into Saudovskoy_Aravii_what_city values(12,9,2);
+insert into Saudovskoy_Aravii_what_city values(13,9,3);
+insert into Saudovskoy_Aravii_what_city values(14,9,4);
+insert into Saudovskoy_Aravii_what_city values(15,9,5);
+insert into Malaziya_what_city values(6,8,1);
+insert into Malaziya_what_city values(7,8,2);
+insert into Malaziya_what_city values(18,8,3);
+insert into Malaziya_what_city values(19,8,4);
+insert into Malaziya_what_city values(10,8,5);
+insert into Tailand_what_city values(21,10,1);
+insert into Tailand_what_city values(22,10,2);
+insert into Tailand_what_city values(3,10,3);
+insert into Tailand_what_city values(14,10,4);
+insert into Tailand_what_city values(25,10,5);
+
+
+create table what_city(
+	id int primary key identity(1,1),
+	name_product_city nvarchar(50)
+)
+
+insert into what_city values ('Казахстан');
+insert into what_city values ('Россия');
+insert into what_city values ('Китай');
+insert into what_city values ('Азербайджан');
+insert into what_city values ('Филиппины');
+insert into what_city values ('Турция');
+insert into what_city values ('Сингапур');
+insert into what_city values ('Малайзия');
+insert into what_city values ('Саудовская Аравия');
+insert into what_city values ('Таиланд');
+
+select * from what_city
+
+select KazakhBest.name, Kazakhstan.salary, what_city.name_product_city
+from KazakhBest_what_city
+join KazakhBest on KazakhBest.id_product=KazakhBest_what_city.KazakhBest_id
+join what_city on what_city.id=KazakhBest_what_city.what_city_id
+join Kazakhstan on Kazakhstan.id_product=KazakhBest_what_city.Kazakhstan_id
+where name_product_city = 'Казахстан';
+
+
+select * from History
+select * from KazakhBest
+
+select * from KazakhBest
+create table KazakhBest_smartphones_gadgets(
+	id int primary key identity(1,1),
+	KazakhBest_id integer not null, 
+	foreign key (KazakhBest_id) references KazakhBest(id_product),
+	smartphones_gadgets_id integer not null, 
+	foreign key (smartphones_gadgets_id) references smartphones_gadgets(id)
+) 
+insert into KazakhBest_smartphones_gadgets values( 1 , 1 ); 
+insert into KazakhBest_smartphones_gadgets values( 3 , 4 ); 
+insert into KazakhBest_smartphones_gadgets values( 4 , 3 ); 
+insert into KazakhBest_smartphones_gadgets values( 5 , 2 ); 
+insert into KazakhBest_smartphones_gadgets values( 14 , 2 ); 
+insert into KazakhBest_smartphones_gadgets values( 11 , 1 ); 
+insert into KazakhBest_smartphones_gadgets values( 13 , 1 ); 
+insert into KazakhBest_smartphones_gadgets values( 16 , 1 ); 
+insert into KazakhBest_smartphones_gadgets values( 12 , 3 ); 
+select KazakhBest.id_product, KazakhBest.name, smartphones_gadgets.name_product
+from KazakhBest_smartphones_gadgets
+join KazakhBest on KazakhBest.id_product=KazakhBest_smartphones_gadgets.KazakhBest_id
+join smartphones_gadgets on smartphones_gadgets.id=KazakhBest_smartphones_gadgets.smartphones_gadgets_id
+
+create table KazakhBest_laptops_computers(
+	id int primary key identity(1,1),
+	KazakhBest_id integer not null, 
+	foreign key (KazakhBest_id) references KazakhBest(id_product),
+	laptops_computers_id integer not null, 
+	foreign key (laptops_computers_id) references laptops_computers(id)
+) 
+insert into KazakhBest_laptops_computers values( 7 , 1 ); 
+insert into KazakhBest_laptops_computers values( 10 , 2 ); 
+insert into KazakhBest_laptops_computers values( 15 , 1 ); 
+insert into KazakhBest_laptops_computers values( 17 , 4 ); 
+insert into KazakhBest_laptops_computers values( 18 , 2 ); 
+insert into KazakhBest_laptops_computers values( 19 , 2 ); 
+insert into KazakhBest_laptops_computers values( 21 , 5 ); 
+insert into KazakhBest_laptops_computers values( 20 , 5 ); 
+select KazakhBest.id_product, KazakhBest.name, laptops_computers.name_product
+from KazakhBest_laptops_computers
+join KazakhBest on KazakhBest.id_product=KazakhBest_laptops_computers.KazakhBest_id
+join laptops_computers on laptops_computers.id=KazakhBest_laptops_computers.laptops_computers_id
+
+create table KazakhBest_appliances(
+	id int primary key identity(1,1),
+	KazakhBest_id integer not null, 
+	foreign key (KazakhBest_id) references KazakhBest(id_product),
+	appliances_id integer not null, 
+	foreign key (appliances_id) references appliances(id)
+) 
+insert into KazakhBest_appliances values( 6 , 1 ); 
+insert into KazakhBest_appliances values( 2 , 2 );
+insert into KazakhBest_appliances values( 9 , 4 );
+insert into KazakhBest_appliances values( 22 , 3 ); 
+insert into KazakhBest_appliances values( 23 , 4 );
+insert into KazakhBest_appliances values( 24 , 1 );
+insert into KazakhBest_appliances values( 25 , 1 );
+insert into KazakhBest_appliances values( 26 , 2 );
+
+select KazakhBest.id_product, KazakhBest.name, appliances.name_product
+from KazakhBest_appliances
+join KazakhBest on KazakhBest.id_product=KazakhBest_appliances.KazakhBest_id
+join appliances on appliances.id=KazakhBest_appliances.appliances_id
+
+
+create table category(
+	id int primary key identity(1,1),
+	name_product nvarchar(50),
+)
+--drop table category
+insert into category values('Smartphones and gadgets');
+insert into category values('Laptops and computers');
+insert into category values('Appliances');
+
+create table smartphones_gadgets( 
+	id int primary key identity(1,1),
+	category_id integer not null, 
+	foreign key (category_id) references category(id),
+	name_product nvarchar(50)
+
+)
+insert into smartphones_gadgets values( 1, 'Smartphones');
+insert into smartphones_gadgets values( 1, 'Smart watch');
+insert into smartphones_gadgets values( 1, 'Tablets');
+insert into smartphones_gadgets values( 1, 'Push-button telephone');
+select category.name_product, smartphones_gadgets.name_product
+from category
+join smartphones_gadgets on smartphones_gadgets.category_id = category.id
+
+create table laptops_computers( 
+	id int primary key identity(1,1),
+	category_id integer not null, 
+	foreign key (category_id) references category(id),
+	name_product nvarchar(50)
+)
+insert into laptops_computers values( 2, 'Laptops');
+insert into laptops_computers values( 2, 'Desktop computers');
+insert into laptops_computers values( 2, 'Ultrabooks');
+insert into laptops_computers values( 2,  'Monoblocks');
+insert into laptops_computers values( 2, 'Antivirus');
+select category.name_product, laptops_computers.name_product
+from category
+join laptops_computers on laptops_computers.category_id = category.id
+
+create table appliances( 
+	id int primary key identity(1,1),
+	category_id integer not null, 
+	foreign key (category_id) references category(id),
+	name_product nvarchar(50)
+)
+insert into appliances values( 3, 'Refrigerators'); --Холодильники
+insert into appliances values( 3, 'Freezers'); --Морозильники
+insert into appliances values( 3, 'Microwaves'); --Микроволновки
+insert into appliances values( 3, 'Slabs'); --Плиты
+insert into appliances values( 3, 'Teapots'); --Чайники
+select category.name_product, appliances.name_product
+from category
+join appliances on appliances.category_id = category.id
+
+
+
+create table History(
+	id int primary key identity(1,1),
+	id_product int,
+    operation nvarchar(50),
+    createat datetime not null default getdate()
+)
+USE Nurik_192
+go
+
+--DISABLE TRIGGER KazakhBest_insert ON KazakhBest
+--ENABLE TRIGGER KazakhBest_insert ON KazakhBest
+--drop trigger KazakhBest_insert
+create trigger KazakhBest_insert
+on KazakhBest
+after insert
+as
+insert into History( id_product , operation)
+select id_product, 'Добавлен товар ' + name 
+from inserted
+--drop trigger KazakhBest_delete
+create trigger KazakhBest_delete
+on KazakhBest
+after delete
+as
+insert into History(id_product, operation)
+select id_product, 'Удален товар ' + name
+from deleted
+--drop trigger KazakhBest_update
+create trigger KazakhBest_update
+on KazakhBest
+after update
+as
+insert into History(id_product, operation)
+select id_product, 'Обновлен товар ' + name
+from inserted
+
+select * from History
+select * from KazakhBest
+
